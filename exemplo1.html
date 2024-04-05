@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários Parte 2</title>
+</head>
+<body>
+        <header>
+                <h1> Formulários parte 2</h1>
+        </header>
+
+        <hr>
+        <!--lista nao ordenada-->
+        <nav> 
+            <ul>
+                <li><a href="">home</a></li>
+                <li><a href="#"> informações</a></li>
+                <li><a href="#">contato</a></li>
+            </ul>
+        </nav>
+
+
+        <main>
+            <section>
+                <h2>Contato</h2>
+                <p>Entre em contato conosto para mais 
+                    informações ou reclamações 
+                </p>
+            </section>
+            <section>
+                <!--Padrao do elemente form, quando nao existe a definição de action é que, quando enviado o formulario "ira" para a mesma pagina 
+                 ex: <form action="post">, 
+                 <form method="post"> -->
+                    <!-- POST enviada dados para o servidor  no corpo da solicitação -->
+                    <!--GET parametros sao passados pela URL, sao visiveis na barra de endereço-->
+                <form method="post">
+                    <label>Nome:</label>
+                        <input type="text" name="nome" id="nome">
+                        <br><br>
+                        <label>Email</label>
+                        <input type="email" name="email" id="email">
+                        <br><br>
+                        <!--fieldset cria uma "caixinha" para delimitar campos em comum-->
+                        <!--legend cria uma legenda para especificar quais sao esses "campus em comum "-->
+                        <fieldset>
+                        <legend>Dados Pessoais</legend>
+                        <label>Endereço</label>
+                        <br><br>
+                        <textarea name="endereço" id="endereço" cols="80" rows="5"></textarea>
+                        <br>
+                        <label> Estados: </label>
+                        <!--O select cria uma lista de opcoes para o usuario escolher, ele é vantajoso quando queremos limitar quais resposta serao dadas para certo campos.
+                        É possivel agrupar opcoes (options) por meio do elemnto optgroup, ele cria uma etiqueta para definir elementos em comum--> 
+                        <select name="estado" id="estado">
+                            
+                         <optgroup label="Sudentes">
+                         <option value="sp">São Paulo</option>
+                         </optgroup> 
+
+                            <optgroup label="sul"> 
+                         <option value="rs">Rio Grande do Sul</option>
+                             </optgroup>  
+                           
+                         </select>
+                    <br><br>
+
+                    <label>Altura: </label> (Em metro) 
+                    <input type="number" name="Altura" id="Altura" step="0.1" min ="0" max="3">
+                    <!--input tipo numero (number) pode ser utilizado em conjunto  com o atributo step, que define a variação desse numero (passo),
+                    o atributo (min) defini o menor valor aceito naquele input e o (Max) que define o maior valor para aquele input -->
+                        <br><br>
+
+                    <label> Data: </label>&nbsp 
+                    <input type="date" name="data" id="data">
+
+                    <br><br>
+
+                    <label>Cidade</label>
+                    <input list="cidades" name="cidade" id="cidade">
+                    <datalist id="cidades">
+                        <option value="Araraquara"></option>
+                        <option value="São Carlos"></option>
+                        <option value="Ibaté"></option>
+                    </datalist>
+
+                    </fieldset>
+
+
+
+                    <center>
+                    <input type="submit" value="Enviar">
+                    </center>
+                </form>
+                </section>
+        </main>
+        <footer>
+         <center>
+                &copy; Formulario de Envio
+         </center>
+        </footer>
+
+</body>
+</html>
